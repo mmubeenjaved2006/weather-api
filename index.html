@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#111c30">
+
+  <meta name="description"
+        content="ATMOS Weather Studio - Live weather and 7-day forecasts.">
+
+  <title>Atmos — Weather API</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <div class="logo">
+        <span class="logo-icon">◈</span>
+        <h1>ATMOS</h1>
+        <span class="logo-subtitle">WEATHER STUDIO</span>
+      </div>
+
+      <div class="live-indicator">
+        <span class="live-dot"></span>
+        LIVE FORECAST
+      </div>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-content">
+        <p class="eyebrow">
+          THE WEATHER, BEAUTIFULLY SIMPLE
+        </p>
+
+        <h2>
+          Know your <span>sky.</span>
+        </h2>
+
+        <p class="hero-description">
+          Real-time conditions and a clear view of the week ahead.
+        </p>
+      </div>
+
+      <!-- SEARCH -->
+      <form id="searchForm" class="search-box">
+
+        <input
+          type="search"
+          id="cityInput"
+          value="Lahore"
+          placeholder="Search city..."
+          aria-label="Search city"
+          autocomplete="off"
+          required
+        >
+
+        <button type="submit" id="searchButton">
+          Search →
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- STATUS -->
+    <p id="statusMessage" class="status" role="status"></p>
+
+    <!-- CURRENT WEATHER -->
+    <section class="weather-card">
+
+      <div class="weather-info">
+
+        <p id="locationName" class="location-name">
+          Lahore, Punjab, Pakistan
+        </p>
+
+        <p id="currentDate" class="current-date">
+          Loading date...
+        </p>
+
+        <div class="temperature-row">
+          <h2 id="temperature">--</h2>
+          <span class="temperature-unit">°C</span>
+        </div>
+
+        <h3 id="weatherDescription">
+          Loading weather...
+        </h3>
+
+        <p class="feels-like">
+          Feels like <span id="feelsLike">--</span>
+        </p>
+
+      </div>
+
+      <div class="weather-visual">
+        <div id="weatherIcon"
+             class="weather-icon"
+             aria-hidden="true">☀️</div>
+      </div>
+
+    </section>
+
+    <!-- WEATHER DETAILS -->
+    <section class="details-grid">
+
+      <article class="detail-card">
+        <p>HUMIDITY</p>
+        <h3 id="humidity">--%</h3>
+      </article>
+
+      <article class="detail-card">
+        <p>WIND SPEED</p>
+        <h3 id="windSpeed">-- km/h</h3>
+      </article>
+
+      <article class="detail-card">
+        <p>PRECIPITATION</p>
+        <h3 id="precipitation">-- mm</h3>
+      </article>
+
+      <article class="detail-card">
+        <p>UV INDEX</p>
+        <h3 id="uvIndex">--</h3>
+      </article>
+
+    </section>
+
+    <!-- FORECAST -->
+    <section class="forecast-section">
+
+      <div class="forecast-heading">
+        <h2>7-day outlook</h2>
+        <p>Daily forecast</p>
+      </div>
+
+      <div class="forecast-scroll">
+        <div id="forecastContainer" class="forecast-grid">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      Powered by
+      <a href="https://open-meteo.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+        Open-Meteo
+      </a>
+      · No API key required
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
